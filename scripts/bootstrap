@@ -135,6 +135,11 @@ install_dotfiles () {
     dst="$HOME/.$(basename "${src%.*}")"
     link_file "$src" "$dst"
   done
+
+  for symlinksh in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*symlink.sh' -not -path '*.git*')
+  do
+    sh $symlinksh
+  done
 }
 
 setup_gitconfig
