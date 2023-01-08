@@ -1,0 +1,32 @@
+# Berikai
+
+spacing         = 3
+hide_ascii      = true
+prefer_small_ascii = false
+key_color       = "#00ff9f"
+separator       = ""
+
+[keys]
+
+
+[box]
+title		= " Berkay ~💚 "
+border          = "plain"
+visible         = true
+
+[palette]
+type		= "Light"
+glyph           = "■ "
+visible         = true
+
+[bar]
+glyph           = "o"
+hide_delimiters = true
+visible         = false
+
+[box.inner_margin]
+x               = 1
+y               = 1
+
+[custom_ascii]
+color           = "#FF7001"

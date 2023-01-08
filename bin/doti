@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# doti
+#
+# `doti` handles installation, updates, things like that. Run it periodically
+# to make sure you're on the latest and greatest.
+
+set -e
+
+parentDirectory="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
+dotfilesDirectory="$(cd "$( dirname "$parentDirectory" )" && pwd -P)"
+
+displayUsageAndExit() {
+	echo "doti -- dotfiles management"
+	echo ""
+	echo "Usage: doti [options]"
+	echo ""
+	echo "Options:"
+	echo "  -e, --edit      Open dotfiles directory for editing"
+	echo "  -b, --bootstrap Bootstraps symlinks and doing configs"
+	echo "  -i, --install   Install dependencies and set configs"
+	echo "  -h, --help      Show this help message and exit"
+	exit
+}
+
+export DOTZSH=$HOME/.dotfiles
+
+while test $# -gt 0; do
+	case "$1" in
+		"-h"|"--help")
+			displayUsageAndExit
+			;;
+		"-e"|"--edit")
+			exec "code" "$dotfilesDirectory"
+			exit
+			;;
+		"-b"|"--bootstrap")
+			# Start bootstrap
+			echo "› $DOTZSH/scripts/bootstrap"
+			$DOTZSH/scripts/bootstrap
+			exit
+			;;
+		"-i"|"--install")
+			# Install software
+			echo "› $DOTZSH/scripts/install"
+			$DOTZSH/scripts/install
+			exit
+			;;
+		*)
+			echo "Invalid option: $1"
+			displayUsageAndExit
+			;;
+	esac
+	shift
+done
+
+displayUsageAndExit
