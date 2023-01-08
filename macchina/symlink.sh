@@ -1,2 +1,2 @@
 # Symlink config
-ln -s $HOME/.dotfiles/macchina/macchina $HOME/.config/ &
+ln -sf $HOME/.dotfiles/macchina/macchina $HOME/.config/ &
