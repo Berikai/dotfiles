@@ -136,7 +136,7 @@ install_dotfiles () {
     link_file "$src" "$dst"
   done
 
-  for symlinksh in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*symlink.sh' -not -path '*.git*')
+  for symlinksh in $(find -H "$DOTFILES_ROOT" -maxdepth 3 -name '*symlink.sh' -not -path '*.git*')
   do
     sh $symlinksh
   done
