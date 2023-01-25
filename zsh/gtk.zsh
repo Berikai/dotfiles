@@ -1,0 +1,1 @@
+#export GTK_THEME=Orchis
