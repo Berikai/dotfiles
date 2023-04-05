@@ -38,3 +38,5 @@
 
 [init]
 	defaultBranch = main
+[safe]
+	directory = /mnt/70F62A13F629DA5C/Workfolders/Projects/Java/akira
