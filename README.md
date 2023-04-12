@@ -4,7 +4,7 @@ Your dotfiles are how you personalize your system. These are mine.
 
 Here is a screenshot of my simple gnome desktop:
 
-![My GNOME Desktop](https://user-images.githubusercontent.com/18515671/211189611-03f7574a-94fd-4813-84c0-3316b6212eca.png)
+![My GNOME Desktop](https://user-images.githubusercontent.com/18515671/231538804-d8177911-8168-47e0-8179-a6ac5cd53f18.png)
 
 
 This repo is forked from [holman's dotfiles](https://github.com/holman/dotfiles).
